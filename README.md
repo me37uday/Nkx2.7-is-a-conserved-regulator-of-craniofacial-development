@@ -7,4 +7,4 @@
 2. **Run the pipeline**:  
    ```bash
    bash scripts/cellranger.sh  # Process FastQ files
-   Rscript scripts/analysis.R  # Run downstream analysis
+   Rscript scripts/single_cell_analysis_using_seurat.R  # Run downstream analysis
