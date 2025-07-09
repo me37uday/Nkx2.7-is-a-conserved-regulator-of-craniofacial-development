@@ -75,7 +75,7 @@ cluster_annotations <- c(
 )
 
 # Add annotations to Seurat object
-seurat_obj$cell_type <- factor(
+seurat_obj$celltype <- factor(
   cluster_annotations[as.character(seurat_obj$seurat_clusters)],
   levels = cluster_annotations
 )
@@ -83,7 +83,8 @@ seurat_obj$cell_type <- factor(
 # Create UMAP plot with cluster annotations
 dim_plot <- DimPlot(seurat_obj,
                    reduction = "umap",
-                   group.by = "cell_type",  # Use the annotated cell types
+                   group.by = "celltype",  # Use the annotated cell types
+                   split.by = "orig.ident", # Split by genotype
                    label = TRUE,            # Show cluster labels
                    label.size = 4,          # Adjust label size
                    repel = TRUE,            # Prevent label overlap
@@ -100,14 +101,18 @@ dev.off()
 
 # Define all marker genes from your description
 marker_genes <- c(
-# Pharyngeal mesenchyme (cluster 2)
-  "fmoda", "col9a3", "cxcl12a", "col5a1",
-# Pharyngeal endoderm (cluster 7)
-  "krt91", "epcam", "col1a1b", "krt4",
+# Cardiovascular mesoderm (cluster 12)
+  "aqp1a.1", "cldn5b", "sox7",
 # Cranial neural crest (cluster 4)
   "grem2b", "twist1a", "dlx2a", "dlx5a",
-# Sox10+ neural crest (cluster 9)
-  "sox10", "foxd3", "crestin",
+# Eye (cluster 10)
+  "six1b", "neurod1",
+# Hematopoietic progenitors 1 (cluster 13)
+  "hbbe3", "hbbe1.3", "hbae3", "hbae1.3", "hbbe1.2", "hbbe1.1", "hbae1.1", "hbae1.3.1", "hbbe2",
+# Hematopoietic progenitors 2 (cluster 14)
+  "lyz", "spi1b",
+# Muscle (cluster 15)
+  "mylpfa", "actc1b", "myl1", "myhz1.1",
 # Neural 1 (cluster 0)
   "sox3", "sox19a", "notch3", "lrrn1",
 # Neural 2 (cluster 1)
@@ -118,26 +123,22 @@ marker_genes <- c(
   "mdka", "notch3", "elavl3", "sox3", "sox19a",
 # Neural 5 (cluster 8)
   "mdka", "notch3", "sox3", "lrrn1",
-# Eye (cluster 10)
-  "six1b", "neurod1",
 # Periderm (cluster 11)
   "cyt1l", "cyt1", "krt5",
-# Cardiovascular mesoderm (cluster 12)
-  "aqp1a.1", "cldn5b", "sox7",
-# Hematopoietic progenitors 1 (cluster 13)
-  "hbbe3", "hbbe1.3", "hbae3", "hbae1.3", "hbbe1.2", "hbbe1.1", "hbae1.1", "hbae1.3.1", "hbbe2",
-# Hematopoietic progenitors 2 (cluster 14)
-  "lyz", "spi1b",
-# Muscle (cluster 15)
-  "mylpfa", "actc1b", "myl1", "myhz1.1"
+# Pharyngeal endoderm (cluster 7)
+  "krt91", "epcam", "col1a1b", "krt4",
+# Pharyngeal mesenchyme (cluster 2)
+  "fmoda", "col9a3", "cxcl12a", "col5a1",
+# Sox10+ neural crest (cluster 9)
+  "sox10", "foxd3", "crestin",  
 )
 
 # Generate dot plot with all markers
 dot_plot <- DotPlot(
   object = seurat_obj,
-  features = marker_genes,
-  group.by = "cell_type",
-  cols = viridis(10),
+  features = rev(unique(marker_genes)),
+  group.by = "celltype",
+  cols = rev(viridis(2)),
   dot.scale = 6,
   scale = TRUE
 ) +
