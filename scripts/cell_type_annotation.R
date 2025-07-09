@@ -80,6 +80,20 @@ seurat_obj$cell_type <- factor(
   levels = cluster_annotations
 )
 
+# Create UMAP plot with cluster annotations
+dim_plot <- DimPlot(seurat_obj,
+                   reduction = "umap",
+                   group.by = "cell_type",  # Use the annotated cell types
+                   label = TRUE,            # Show cluster labels
+                   label.size = 4,          # Adjust label size
+                   repel = TRUE,            # Prevent label overlap
+                   pt.size = 0.5)
+
+# Save plot
+pdf("annotated_umap.pdf", width = 10, height = 8)
+print(dim_plot)
+dev.off()
+
 # =============================================
 # 4. MARKER GENE DOT PLOT
 # =============================================
