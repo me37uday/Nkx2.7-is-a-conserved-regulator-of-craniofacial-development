@@ -30,18 +30,18 @@ Interactive exploration: [SCP2431](https://singlecell.broadinstitute.org/single_
  
 Step 1: Align reads to reference genome
 ```
-   bash scripts/cellranger.sh
+bash scripts/cellranger.sh
 ```
 
 Step 2: Quality control and preprocessing
 ```
-   Rscript scripts/single_cell_analysis_using_seurat.R
+Rscript scripts/single_cell_analysis_using_seurat.R
 ```
 Output: Unannotated seurat object
 
 Step 3: Cell Type Annotation
 ```
-   Rscript scripts/cell_type_annotation.R
+Rscript scripts/cell_type_annotation.R
 ```
 Outputs:
 
@@ -62,3 +62,15 @@ DEG tables (cnc_KO_vs_WT_DEGs.csv)
 Volcano plots (cnc_volcano.pdf)
 
 Processed subset (cranial_neural_crest_subset.rds)
+
+### Repository structure
+
+nkx2.7_craniofacial_scRNAseq/
+├── data/                   # Processed data files
+├── scripts/
+│   ├── cellranger.sh       # Raw data alignment
+│   ├── single_cell_analysis_using_seurat.R  # QC and preprocessing
+│   ├── cell_type_annotation.R               # Cluster annotation
+│   └── cranial_neural_crest_analysis.R      # KO vs WT analysis
+├── figures/                # Output figures
+└── README.md               # This file
