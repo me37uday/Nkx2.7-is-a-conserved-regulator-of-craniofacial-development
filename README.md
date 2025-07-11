@@ -24,7 +24,7 @@ Processed data:
 
 Annotated Seurat object: [GSE240780_seurat_object.rds.gz](https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE240780&format=file&file=GSE240780%5Fseurat%5Fobject%2Erds%2Egz)
 
-Interactive exploration: Broad Institute Single Cell Portal
+Interactive exploration: [SCP2431](https://singlecell.broadinstitute.org/single_cell/study/SCP2431/nkx2-7-is-a-conserved-regulator-of-craniofacial-development)
 
 ## Analysis Pipeline
  
@@ -33,4 +33,8 @@ Step 1: Align reads to reference genome
    bash scripts/cellranger.sh
 ```
 
-Step 2: 
+Step 2: Quality control and preprocessing
+```
+   Rscript scripts/single_cell_analysis_using_seurat.R
+```
+Output: Unannotated seurat object
