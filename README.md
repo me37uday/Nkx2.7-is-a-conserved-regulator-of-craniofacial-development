@@ -26,17 +26,14 @@ Interactive exploration: Broad Institute Single Cell Portal
 
 Analysis Pipeline
 Step 1: Raw Data Processing
-bash
 # Align reads to reference genome
 bash scripts/cellranger.sh
 Step 2: Single-Cell Analysis
-bash
 # Quality control and preprocessing
 Rscript scripts/single_cell_analysis_using_seurat.R
 Output: Unannotated Seurat object (unannotated_seurat.rds)
 
 Step 3: Cell Type Annotation
-bash
 # Cluster identification and annotation
 Rscript scripts/cell_type_annotation.R
 Outputs:
@@ -48,7 +45,6 @@ UMAP plots (umap.pdf)
 Marker gene dot plots (cell_type_markers.pdf)
 
 Step 4: Cranial Neural Crest Analysis
-bash
 # Differential expression analysis
 Rscript scripts/cranial_neural_crest_analysis.R
 Outputs:
