@@ -65,6 +65,7 @@ Processed subset (cranial_neural_crest_subset.rds)
 
 ### Repository structure
 
+```
 nkx2.7_craniofacial_scRNAseq/
 ├── data/                   # Processed data files
 ├── scripts/
@@ -74,3 +75,4 @@ nkx2.7_craniofacial_scRNAseq/
 │   └── cranial_neural_crest_analysis.R      # KO vs WT analysis
 ├── figures/                # Output figures
 └── README.md               # This file
+```
