@@ -20,7 +20,7 @@ The raw sequencing data used in this study is available at:
    prefetch SRRXXXXXXX  # Replace with your SRA ID
    fastq-dump --split-files SRRXXXXXXX
 
-   Processed Data
+Processed Data
 Annotated Seurat object: Available in the GEO submission
 
 Interactive exploration: Broad Institute Single Cell Portal
@@ -28,5 +28,5 @@ Interactive exploration: Broad Institute Single Cell Portal
 ## Analysis Pipeline
  
 Step 1: Align reads to reference genome
-```bash
-scripts/cellranger.sh
+```
+bash scripts/cellranger.sh
