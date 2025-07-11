@@ -14,10 +14,10 @@ The raw sequencing data used in this study is available at:
 1. **Download processed files directly**:  
    - From the [GEO record](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE240780):
      - Download `annotated_seurat.rds` for the full processed dataset
-2. **Via `sra-tools`** (command line):  
+2. **Download raw data via `sra-tools`** (command line):  
    ```bash
-   prefetch SRRXXXXXXX  # Replace with your SRA ID
-   fastq-dump --split-files SRRXXXXXXX
+   prefetch SRR25634296  # Replace with SRR25634297 for WT sample
+   fastq-dump --split-files SRR25634296
 Processed Data
 Annotated Seurat object: Available in the GEO submission
 
