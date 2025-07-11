@@ -20,9 +20,9 @@ The raw sequencing data used in this study is available at:
    prefetch SRRXXXXXXX  # Replace with your SRA ID
    fastq-dump --split-files SRRXXXXXXX
 
-Processed Data
+Processed data:
 
-Annotated Seurat object: Available in the GEO submission
+Annotated Seurat object: [GSE240780_seurat_object.rds.gz](https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE240780&format=file&file=GSE240780%5Fseurat%5Fobject%2Erds%2Egz)
 
 Interactive exploration: Broad Institute Single Cell Portal
 
