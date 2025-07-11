@@ -8,13 +8,12 @@ This repository contains all analysis code for the single-cell RNA sequencing st
 The raw sequencing data used in this study is available at:  
 **GEO Accession:** [GSE240780](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE240780)  
 
-#### File Structure
-- `fastq/`: Contains paired-end reads (SRA format)  
-- `processed/`: Processed Seurat objects and analysis outputs  
 
 #### How to Download
-1. **Via GEO**:  
-   - Follow the GEO link above → Click "SRA Run Selector" → Download `.fastq` files  
+
+1. **Download processed files directly**:  
+   - From the [GEO record](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE240780):
+     - Download `annotated_seurat.rds` for the full processed dataset
 2. **Via `sra-tools`** (command line):  
    ```bash
    prefetch SRRXXXXXXX  # Replace with your SRA ID
@@ -22,7 +21,7 @@ The raw sequencing data used in this study is available at:
 Processed Data
 Annotated Seurat object: Available in the GEO submission
 
-Interactive exploration: Broad Institute Single Cell Portal
+Interactive exploration: [SCP2431](https://singlecell.broadinstitute.org/single_cell/study/SCP2431/nkx2-7-is-a-conserved-regulator-of-craniofacial-development)
 
 Analysis Pipeline
 Step 1: Raw Data Processing
