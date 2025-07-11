@@ -30,4 +30,7 @@ Interactive exploration: Broad Institute Single Cell Portal
  
 Step 1: Align reads to reference genome
 ```
-bash scripts/cellranger.sh
+   bash scripts/cellranger.sh
+```
+
+Step 2: 
