@@ -20,7 +20,7 @@ The raw sequencing data used in this study is available at:
    prefetch SRRXXXXXXX  # Replace with your SRA ID
    fastq-dump --split-files SRRXXXXXXX
 
-Processed data:
+### Processed data:
 
 Annotated Seurat object: [GSE240780_seurat_object.rds.gz](https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE240780&format=file&file=GSE240780%5Fseurat%5Fobject%2Erds%2Egz)
 
@@ -29,39 +29,39 @@ Interactive exploration: [SCP2431](https://singlecell.broadinstitute.org/single_
 ## Analysis Pipeline
  
 Step 1: Align reads to reference genome
-```
-bash scripts/cellranger.sh
-```
+   ```
+   bash scripts/cellranger.sh
+   ```
 
 Step 2: Quality control and preprocessing
-```
-Rscript scripts/single_cell_analysis_using_seurat.R
-```
-Output: Unannotated seurat object
+   ```
+   Rscript scripts/single_cell_analysis_using_seurat.R
+   ```
+   Output: Unannotated seurat object
 
 Step 3: Cell Type Annotation
-```
-Rscript scripts/cell_type_annotation.R
-```
-Outputs:
-
-Annotated Seurat object (annotated_seurat.rds)
-
-UMAP plots (umap.pdf)
-
-Marker gene dot plots (cell_type_markers.pdf)
-
+   ```
+   Rscript scripts/cell_type_annotation.R
+   ```
+   Outputs:
+   
+   Annotated Seurat object (annotated_seurat.rds)
+   
+   UMAP plots (umap.pdf)
+   
+   Marker gene dot plots (cell_type_markers.pdf)
+   
 Step 4: Cranial Neural Crest Analysis
-```
-Rscript scripts/cranial_neural_crest_analysis.R
-```
-Outputs:
-
-DEG tables (cnc_KO_vs_WT_DEGs.csv)
-
-Volcano plots (cnc_volcano.pdf)
-
-Processed subset (cranial_neural_crest_subset.rds)
+   ```
+   Rscript scripts/cranial_neural_crest_analysis.R
+   ```
+   Outputs:
+   
+   DEG tables (cnc_KO_vs_WT_DEGs.csv)
+   
+   Volcano plots (cnc_volcano.pdf)
+   
+   Processed subset (cranial_neural_crest_subset.rds)
 
 ### Repository structure
 
