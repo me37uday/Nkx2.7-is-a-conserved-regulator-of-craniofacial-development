@@ -25,7 +25,7 @@ Annotated Seurat object: Available in the GEO submission
 
 Interactive exploration: Broad Institute Single Cell Portal
 
-##Analysis Pipeline
+## Analysis Pipeline
  
 Step 1: Align reads to reference genome
 ```bash
