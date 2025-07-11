@@ -67,12 +67,11 @@ Processed subset (cranial_neural_crest_subset.rds)
 
 ```
 nkx2.7_craniofacial_scRNAseq/
-├── data/                   # Processed data files
+├── data/                   # Raw files of figures
 ├── scripts/
 │   ├── cellranger.sh       # Raw data alignment
 │   ├── single_cell_analysis_using_seurat.R  # QC and preprocessing
 │   ├── cell_type_annotation.R               # Cluster annotation
 │   └── cranial_neural_crest_analysis.R      # KO vs WT analysis
-├── figures/                # Output figures
 └── README.md               # This file
 ```
