@@ -26,7 +26,7 @@ Annotated Seurat object: Available in the GEO submission
 Interactive exploration: Broad Institute Single Cell Portal
 
 Analysis Pipeline
-# Align reads to reference genome
-Step 1: Raw Data Processing
+ 
+Step 1: Align reads to reference genome
 ```bash
 scripts/cellranger.sh
