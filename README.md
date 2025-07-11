@@ -80,6 +80,10 @@ nkx2.7_craniofacial_scRNAseq/
 
 CellRanger (v6.1.2)
 
-Seurat (v4.1.0+)
+Seurat (v4.1.0)
 
 R Packages:
+```
+   install.packages(c("Seurat", "ggplot2", "ggrepel", "viridis", "dplyr"))
+```
+
