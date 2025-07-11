@@ -21,6 +21,7 @@ The raw sequencing data used in this study is available at:
    fastq-dump --split-files SRRXXXXXXX
 
 Processed Data
+
 Annotated Seurat object: Available in the GEO submission
 
 Interactive exploration: Broad Institute Single Cell Portal
