@@ -1,10 +1,84 @@
+# Nkx2.7 in Craniofacial Development: Single-Cell RNA-Seq Analysis
 
----
+This repository contains all analysis code for the single-cell RNA sequencing study of wild-type and nkx2.7-/- zebrafish craniofacial development.
 
-## 🚀 **Quick Start**
-1. **Download raw data** from GEO: [GSE240780](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE240780)  
-   (See [`data/README.md`](data/README.md) for details).  
-2. **Run the pipeline**:  
+## Data Availability
+
+### Raw Data Download
+The raw sequencing data used in this study is available at:  
+**GEO Accession:** [GSE240780](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE240780)  
+
+#### File Structure
+- `fastq/`: Contains paired-end reads (SRA format)  
+- `processed/`: Processed Seurat objects and analysis outputs  
+
+#### How to Download
+1. **Via GEO**:  
+   - Follow the GEO link above → Click "SRA Run Selector" → Download `.fastq` files  
+2. **Via `sra-tools`** (command line):  
    ```bash
-   bash scripts/cellranger.sh  # Process FastQ files
-   Rscript scripts/single_cell_analysis_using_seurat.R  # Run downstream analysis
+   prefetch SRRXXXXXXX  # Replace with your SRA ID
+   fastq-dump --split-files SRRXXXXXXX
+Processed Data
+Annotated Seurat object: Available in the GEO submission
+
+Interactive exploration: Broad Institute Single Cell Portal
+
+Analysis Pipeline
+Step 1: Raw Data Processing
+bash
+# Align reads to reference genome
+bash scripts/cellranger.sh
+Step 2: Single-Cell Analysis
+bash
+# Quality control and preprocessing
+Rscript scripts/single_cell_analysis_using_seurat.R
+Output: Unannotated Seurat object (unannotated_seurat.rds)
+
+Step 3: Cell Type Annotation
+bash
+# Cluster identification and annotation
+Rscript scripts/cell_type_annotation.R
+Outputs:
+
+Annotated Seurat object (annotated_seurat.rds)
+
+UMAP plots (umap.pdf)
+
+Marker gene dot plots (cell_type_markers.pdf)
+
+Step 4: Cranial Neural Crest Analysis
+bash
+# Differential expression analysis
+Rscript scripts/cranial_neural_crest_analysis.R
+Outputs:
+
+DEG tables (cnc_KO_vs_WT_DEGs.csv)
+
+Volcano plots (cnc_volcano.pdf)
+
+Processed subset (cranial_neural_crest_subset.rds)
+
+Repository Structure
+text
+nkx2.7_craniofacial_scRNAseq/
+├── data/                   # Processed data files
+├── scripts/
+│   ├── cellranger.sh       # Raw data alignment
+│   ├── single_cell_analysis_using_seurat.R  # QC and preprocessing
+│   ├── cell_type_annotation.R               # Cluster annotation
+│   └── cranial_neural_crest_analysis.R      # KO vs WT analysis
+├── figures/                # Output figures
+└── README.md               # This file
+Dependencies
+CellRanger (v6.1.2)
+
+Seurat (v4.1.0+)
+
+R Packages:
+
+r
+install.packages(c("Seurat", "ggplot2", "ggrepel", "viridis", "dplyr"))
+Citation
+If you use this code or data, please cite our publication:
+[Your Paper Title]. [Journal Name] [Year]. DOI: [XXXX/XXXX]
