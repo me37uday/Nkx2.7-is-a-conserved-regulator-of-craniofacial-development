@@ -75,3 +75,11 @@ nkx2.7_craniofacial_scRNAseq/
 │   └── cranial_neural_crest_analysis.R      # KO vs WT analysis
 └── README.md               # This file
 ```
+
+### Dependencies
+
+CellRanger (v6.1.2)
+
+Seurat (v4.1.0+)
+
+R Packages:
