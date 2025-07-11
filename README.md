@@ -38,3 +38,27 @@ Step 2: Quality control and preprocessing
    Rscript scripts/single_cell_analysis_using_seurat.R
 ```
 Output: Unannotated seurat object
+
+Step 3: Cell Type Annotation
+```
+   Rscript scripts/cell_type_annotation.R
+```
+Outputs:
+
+Annotated Seurat object (annotated_seurat.rds)
+
+UMAP plots (umap.pdf)
+
+Marker gene dot plots (cell_type_markers.pdf)
+
+Step 4: Cranial Neural Crest Analysis
+```
+Rscript scripts/cranial_neural_crest_analysis.R
+```
+Outputs:
+
+DEG tables (cnc_KO_vs_WT_DEGs.csv)
+
+Volcano plots (cnc_volcano.pdf)
+
+Processed subset (cranial_neural_crest_subset.rds)
