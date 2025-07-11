@@ -8,9 +8,6 @@ This repository contains all analysis code for the single-cell RNA sequencing st
 The raw sequencing data used in this study is available at:  
 **GEO Accession:** [GSE240780](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE240780)  
 
-#### File Structure
-- `fastq/`: Contains paired-end reads (SRA format)  
-- `processed/`: Processed Seurat objects and analysis outputs  
 
 #### How to Download
 1. **Via GEO**:  
