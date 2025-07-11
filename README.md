@@ -84,7 +84,7 @@ R Packages:
 install.packages(c("Seurat", "ggplot2", "ggrepel", "viridis", "dplyr"))
 ```
 
-Citation
+### Citation
 If you use this code or data, please cite our publication:
 
 Nkx2.7 is a conserved regulator of craniofacial development. Nature Communications 2025.  
